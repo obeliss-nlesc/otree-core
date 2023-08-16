@@ -216,7 +216,6 @@ dbq = db.query
 
 
 IN_MEMORY = bool(os.getenv('OTREE_IN_MEMORY'))
-print(f'OTREE_IN_MEMORY: {os.getenv("OTREE_IN_MEMORY")} {IN_MEMORY}')
 
 
 def get_engine():
@@ -228,7 +227,6 @@ def get_engine():
             poolclass=sqlalchemy.pool.StaticPool,
         )
     else:
-        print("Not in mem db")
         DATABASE_URL = os.getenv('DATABASE_URL', f'sqlite:///{DB_FILE}')
         kwargs = {}
         if DATABASE_URL.startswith('sqlite'):

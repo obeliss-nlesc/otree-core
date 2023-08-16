@@ -103,8 +103,8 @@ def execute_from_command_line(*args, **kwargs):
         # skip full setup.
         pass
     else:
-        #if cmd in ['devserver_inner', 'bots']:
-            #os.environ['OTREE_IN_MEMORY'] = '1'
+        if cmd in ['devserver_inner', 'bots']:
+            os.environ['OTREE_IN_MEMORY'] = '1'
         setup()
 
     from otree.cli.base import call_command

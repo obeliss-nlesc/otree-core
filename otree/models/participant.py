@@ -90,6 +90,9 @@ class Participant(MixinVars, otree.database.SSPPGModel):
     _gbat_tab_hidden = Column(st.Boolean, default=False)
     _gbat_page_index = Column(st.Integer,)
     _gbat_grouped = Column(st.Boolean,)
+    
+    # track participants' connection to a websocket
+    is_connected_to_ws = Column(st.Boolean, default=False)
 
     def set_label(self, label):
         if not label:
